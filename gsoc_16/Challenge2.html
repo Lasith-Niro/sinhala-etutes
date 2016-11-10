@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+    }
+    th {
+        text-align: left;
+    }
+</style>
+<head>
+    <title>Enhancing the Camera operation</title>
+</head>
+<body>
+
+<div class=""> <img width="400px" height="100px" src="mit-app-inventor.png">
+    <img align="right" width="400px" height="100px" src="GSoC-2016.png"> </div>
+<h2>Reason to stop working of camera</h2>
+<div>
+
+        <p>
+        In my point of view this problem encountered with Android OS. But in early android versions (Example: 2.3)
+        this problem never occurred. But in KitKat or newly released OS this problem occurs.<br>
+        I found some methods to avoid this issue temporally.
+        Examples:
+        <ul>
+            <li>clearing camera app cache</li>
+            <li>uninstall camera updates</li>
+            <li>disable/re-enable app</li>
+            <li>restarting the phone</li>
+        </ul>
+        But in normal usage users can't ignore the issue even they update their OS.So I think this is an OS level problem and It needs an OS level answer.
+        So users can use software to change permissions in apps. One such solution is users can use "Permission Explorer".
+        <br>
+        link : <a href="https://play.google.com/store/apps/details?id=com.carlocriniti.android.permission_explorer&hl=en" >Download</a>
+        <br>
+        <br>
+        </p>
+
+</div>
+<h2>Continuation of the challenge</h2>
+<div>
+
+        <p>
+            In this challenge I recognized three major parts.They are
+            <ol>
+                <li>Let the camera to take picture automatically, without requiring user manual intervention for each shot.</li>
+                <li>What kind of properties,methods or components will be required</li>
+                <li>Back-End coding part of this new component(modifications)</li>
+            </ol>
+    Let me explain one-by-one,<br>
+    <b>First</b> user must use both camera and clock components to do this task. The below picture will give you the relevant code snippet.
+    <img  src="snipt1.png"><br>
+    In this case when user clicks on 'button1' then the app get photos from camera and save it to memory.<br>
+    that's all!
+    <br>
+    <br>
+    <b>Second</b>, I think we need a new component to implement this task. It may be an extension of camera component.
+    But I propose it should be an indivisible, separate component.<br>
+    So these are the methods and properties that I propose.<br>
+    </p>
+    </div>
+    <table style="width:100%">
+        <table style="width:80%">
+            <tr>
+                <th>#</th>
+                <th>Methods</th>
+                <th>Properties</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Number_Of_Pictures</td>
+                <td>ImageWidth</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>TimeGap</td>
+                <td>ImageHeight</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>TakePicture</td>
+                <td>image</td>
+            </tr>
+        </table>
+
+        <br>
+        <br>
+        <b>Third</b>, The coding part.<br>
+        So, programmers will be able to make a new class for the component and programmers can use the existing camera.java class in
+        <i>appinventor/components/src/com/google/appinventor/components/runtime</i><br>
+        Also they can use <ul><i><li>appinventor/components/src/com/google/zxing/client/android/camera/CameraConfigurationManager.java</li>
+                           <li>appinventor/components/src/com/google/zxing/client/android/camera/CameraManager.java</li></i></ul>
+        files for further development.
+        When we looping the function named <b><i>TakePicture()</i></b> we can get expected results for this challenge.<br><br>
+        <img src="screen_java.png">
+
+
+<h2>References</h2>
+<div>
+    <p>
+        <a href="https://productforums.google.com/forum/#!topic/nexus/mZegeAoqZsI">https://productforums.google.com/forum/#!topic/nexus/mZegeAoqZsI</a><br>
+        <a href="https://docs.google.com/document/d/1V3LZbGz7spmRkdDMexDBHoh_hvt7wz0ZzDEHr5s4t0s/pub">https://docs.google.com/document/d/1V3LZbGz7spmRkdDMexDBHoh_hvt7wz0ZzDEHr5s4t0s/pub</a>
+    </p>
+</div>
+</body>
+</html>
